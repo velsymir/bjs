@@ -75,9 +75,46 @@ function averageEvenElementsWorker(...arr) {
     return sumEvenEl / countEvenEl;
   }
 
-
-
-
 function makeWork (arrOfArr, func) {
-
+  let maxResult = -Infinity;
+  for(let i = 0 ; i < arrOfArr.length ; i++) {
+    let result = func(...arrOfArr[i]);
+    if(maxResult < result) {
+      maxResult = result
+    }
+  }
+  return maxResult;
 }
+
+
+//
+// функции конструкторы
+
+// function newUser (name, lastName, age, sex) {
+//   this.name = name;
+//   this.lastName = lastName;
+//   this.age = age;
+//   this.sex = sex;
+//   this.greet = function() {
+//     console.log('Hi' + this.name + 'your age is ' + this.age);
+//   }
+// }
+//
+// const ivan = new newUser('Ivan', 'Ivanov', 35, 'male');
+// console.log(ivan);
+// let greetings = ivan.greet();
+// console.log(greetings);
+
+let arr = [];
+
+function newArr(valueOfNum) {
+  for(let i = 0 ; i < valueOfNum ; i++) {
+    arr.push(Math.round(Math.random() * 100));
+  }
+}
+
+newArr(5);
+let strArr = ['ivan', 'sasha', 'korol', 'tema']
+console.log(arr)
+strArr.map((item) => item[0])
+console.log(strArr);
